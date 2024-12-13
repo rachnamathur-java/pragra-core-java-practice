@@ -2,17 +2,25 @@ package calculator;
 
 import java.util.Scanner;
 
+
 public class Addition {
-    Scanner scanner = new Scanner(System.in);
-    public void add() {
-        //System.out.println("Addtion");
-        System.out.println("enter num1 ");
-        int x = scanner.nextInt();
-        System.out.println("enter num2 ");
-        int y = scanner.nextInt();
-        int sum = x + y;
-        System.out.println(sum);
 
+    private void add(Scanner scanner) {
+        System.out.println("Addition Called...");
+        System.out.println("                            ");
+        double x = Utils.enterNumber(scanner, "First Number");
+        double y = Utils.enterNumber(scanner, "Second Number");
+        System.out.println("                            ");
+        System.out.println("Sum of "+x+ " and " +y+ " is =  " + (x+y));
+        System.out.println("                            ");
+    }
 
+    public  void executeAddition(Scanner scanner){
+        boolean addAgain = true;
+        while(addAgain){
+            add(scanner);
+            Utils.choice("Addition");
+            addAgain = Utils.doAgain(scanner, addAgain);
+        }
     }
 }

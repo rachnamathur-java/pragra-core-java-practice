@@ -7,13 +7,16 @@ public class CalculatorService {
     Subtraction subtraction = new Subtraction();
     Multiplication multiplication = new Multiplication();
     Division division = new Division();
+    Modulus module = new Modulus();
 
 
 
     public void chooseFunction() {
+        System.out.println("                            ");
         System.out.println("***************************");
         System.out.println("welcome to my calculator");
         System.out.println("***************************");
+        System.out.println("                            ");
 
         System.out.println("1. Addition");
         System.out.println("2. Subtraction");
@@ -21,8 +24,9 @@ public class CalculatorService {
         System.out.println("4. Division");
         System.out.println("5. Modulus");
         System.out.println("0. Exit");
-
+        System.out.println("                            ");
         System.out.println("Enter your choice ....");
+        System.out.println("                            ");
 
 
     }
@@ -32,7 +36,7 @@ public class CalculatorService {
         return scanner.nextInt();
     }
 
-    public void executeServive() {
+    public void executeService() {
         Scanner scanner = new Scanner(System.in);
         boolean isTerminated = false;
         while (!isTerminated) {
@@ -44,23 +48,20 @@ public class CalculatorService {
                     isTerminated = true;
                     break;
                 case 1:
-                    addition.add();
+                    addition.executeAddition(scanner);
                     break;
                 case 2:
-                    subtraction.sub(scanner);
+                    subtraction.executeSub(scanner);
                     break;
                 case 3:
-                    multiplication.multi();
-
-
+                    multiplication.executeMulti(scanner);
                     break;
                 case 4:
-
+                    division.executeDivision(scanner);
                     break;
                 case 5:
-
+                    module.executeMod(scanner);
                     break;
-
                 default:
                     System.out.println("Invalid Menu Option...");
             }
